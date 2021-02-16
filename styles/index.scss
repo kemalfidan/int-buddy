@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html, #__next {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: inherit;
+
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, "Courier New";
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
