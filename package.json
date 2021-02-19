@@ -11,6 +11,8 @@
     "lint:eslint": "eslint '**/*.{tsx,ts,js,jsx,json}' --fix"
   },
   "dependencies": {
+    "formidable": "^1.2.2",
+    "mongoose": "^5.11.17",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
