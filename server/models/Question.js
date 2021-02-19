@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, models, Schema } from "mongoose";
 
 export const QuestionSchema = new Schema({
     type: {
@@ -11,4 +11,4 @@ export const QuestionSchema = new Schema({
     },
 });
 
-export default model("Question", QuestionSchema);
+export default (models.Question) || model("Question", QuestionSchema);

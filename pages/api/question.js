@@ -1,4 +1,4 @@
-import { addQuestion } from "server/actions/Question";
+import { addQuestion, getQuestions } from "server/actions/Question";
 import formidable from "formidable";
 
 export const config = {
@@ -7,10 +7,17 @@ export const config = {
     },
 };
 
+// GET    /api/question - Create exam session and return questions
+// POST   /api/question - Create an exam question
 export default async function handler(req, res) {
     try {
         if (req.method === "GET") {
-            throw new Error("need to create get request for a question");
+            const questions = await getQuestions();
+            console.log(questions)
+            res.status(200).json({
+                status: 200,
+                payload: questions,
+            });
         } 
         else if (req.method === "POST") {
             const form = new formidable.IncomingForm();
