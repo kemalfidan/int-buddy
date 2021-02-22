@@ -11,7 +11,7 @@ const max_questions = 2;
 class questions extends Component {
   
   state = {
-    questionIndex : 1
+    questionIndex : 0
   };
 
   previousHandler = () => {

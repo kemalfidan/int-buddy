@@ -9,9 +9,6 @@ class MCQuestion extends Component {
 
   /* to do the ml_questions should be pulled from its parent */
   mc_questions = {
-
-
-
     "question": "The code below calculates the average of two numbers. Will the code run properly with all test cases?\nint calculate_average(int a, int b) {\n    return a + b / 2;\n}",
     "answer": "C",
     "explanation": "It should be should be (a + b) / 2",
@@ -36,8 +33,8 @@ class MCQuestion extends Component {
 
               <NewlineText text={this.mc_questions.question} />
               <button type="button" className="btn btn-outline-primary" onClick={this.hintsHandler}>
-                {this.state.showAnswer && 'Hide hints'}
-                {!this.state.showAnswer && 'Show hints'}
+                {this.state.showAnswer && 'Hide answer'}
+                {!this.state.showAnswer && 'Show answer'}
               </button>
 
               { this.state.showAnswer && <div><br/> Answer: {this.mc_questions.answer} </div> }
