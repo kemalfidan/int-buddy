@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import IntroQuestion from "components/introQuestion";
+import MCQuestion from "components/mcQuestion";
 import Layout from "components/Layout"
 import Header from 'components/Header'
 import Head from 'next/head'
 
+
+const max_questions = 2;
 /* question for */
 class questions extends Component {
   
   state = {
-    questionIndex : 0
+    questionIndex : 1
   };
+
+  previousHandler = () => {
+    let i = this.state.questionIndex - 1;
+    this.setState({ questionIndex: i });
+  }
+
+  nextHandler = () => {
+    let i = this.state.questionIndex + 1;
+    this.setState({ questionIndex: i });
+  }
+
   render() {
     return (
       <>
@@ -22,10 +36,12 @@ class questions extends Component {
 
         <Header appTitle="intBuddy"/>
 
-        { this.state.questionIndex == 0 && <IntroQuestion></IntroQuestion>}
+        { this.state.questionIndex == 0 && <IntroQuestion></IntroQuestion> }
+        { this.state.questionIndex == 1 && <MCQuestion></MCQuestion> }
+
         <div className="navBn">
-          <button type="button" className="btn btn-primary previous">Previous</button>
-          <button type="button" className="btn btn-primary next">Next</button>
+          { this.state.questionIndex != 0 && <button onClick={this.previousHandler} type="button" className="btn btn-primary previous">Previous</button> }
+          { this.state.questionIndex != max_questions - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
         </div>
 
 

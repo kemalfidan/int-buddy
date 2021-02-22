@@ -40,10 +40,11 @@ class IntroQuestion extends Component {
               </button>
 
               { this.state.showHints && 
+                
                 <div>
-                  Hints:
+                  <br/>Hints:
                   <ul>
-                    {this.intro_questions.hints.map(hint => {return <li key={hint}>{hint}</li>})}
+                    {this.intro_questions.hints.map( (hint,index) => {return <li key={index}>{hint}</li>})}
                   </ul>
                
                
@@ -56,7 +57,7 @@ class IntroQuestion extends Component {
                 
               }
             </div>
-            <div className="col-6">
+            <div className="col">
               
                 <label className="textLabel">Your answer: 
                   <textarea name="answer" rows="5" cols = "50" className="textInput"></textarea>
@@ -70,11 +71,7 @@ class IntroQuestion extends Component {
         <style global jsx>{`
           .mycontainer {
             margin: 20px;
-          }
-
-          .container div div {
-            padding: 30px 10px 30px 10px;
-            margin-right: 10px;
+            padding: 0px 10px 0px 10px;
           }
 
           .textInput {
