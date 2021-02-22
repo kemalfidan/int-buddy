@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Layout>
         Welcome to intBuddy! 
-        <Link href="/questions/questions"><a>Start interview</a></Link>
+        <Link href="/questions"><a>Start interview</a></Link>
       </Layout>
     </>
   );

@@ -60,7 +60,7 @@ class MCQuestion extends Component {
         </div>
 
 
-        <style global jsx>{`
+        <style jsx>{`
           .mycontainer {
             margin: 20px;
             padding: 0px 10px 0px 10px;
