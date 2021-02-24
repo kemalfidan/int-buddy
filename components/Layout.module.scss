@@ -17,12 +17,39 @@
         height: inherit;
         width: 100%;
 
-        background: $secondary;
+        background: $content-color;
         color: $on-secondary;
         font-family: $core-font;
 
-        a {
-            color: inherit;
-        }
+        
+    }
+
+    .WelcomeInfoPage {
+        float: left;
+        width: 50%;
+        height: 100%;
+
+        padding: 15px;
+        text-align: center;
+    }
+
+    .WelcomeInfoTitle {
+        background: $content-color;
+        font-size: 34px;
+    }
+
+    .GetStartedButton {
+        background: $button-color;
+        color: black;
+
+        padding: 15px 15px 15px 15px;
+
+        position: absolute;
+    }
+
+    .Slideshow {
+        float: right;
+        width: 50%;
+        height: 100%;
     }
 }

@@ -3,7 +3,7 @@ import Layout from "components/Layout";
 
 const Home = () => {
   return (
-    <Layout>Welcome to intBuddy!</Layout>
+    <Layout></Layout>
   );
 };
 
