@@ -4,10 +4,7 @@ import Link from 'next/link';
 const Home = () => {
   return (
     <>
-      <Layout>
-        Welcome to intBuddy! 
-        <Link href="/questions"><a>Start interview</a></Link>
-      </Layout>
+      <Layout></Layout>
     </>
   );
 };
