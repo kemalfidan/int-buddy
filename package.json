@@ -13,7 +13,7 @@
   "dependencies": {
     "formidable": "^1.2.2",
     "mongoose": "^5.11.17",
-    "next": "9.4.4",
+    "next": "^10.0.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.32.7"

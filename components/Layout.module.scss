@@ -41,10 +41,18 @@
     .GetStartedButton {
         background: $button-color;
         color: black;
+        border-radius: 7px;
+        border-width: 20px;
 
         padding: 15px 15px 15px 15px;
 
         position: absolute;
+        cursor: pointer;
+    }
+
+    .GetStartedButton:hover {
+        border-width: 20px;
+        border-color: $button-hover-color;
     }
 
     .Slideshow {
