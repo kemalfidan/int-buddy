@@ -5,7 +5,7 @@ import styles from "./Footer.module.scss";
 const Footer = props => (
     <>
         <Link href="/">
-            <div className={styles.Header}>{props.appTitle}</div>
+            <div className={styles.Footer}>{props.appTitle}</div>
         </Link>
     </>
 );

@@ -5,29 +5,31 @@
     display: flex;
     flex-direction: column;
 
-    height: 100%;
+    height: auto;
     width: 100%;
 
     .Content {
         flex: 1;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: inherit;
+        
         width: 100%;
 
         background: $content-color;
         color: $on-secondary;
         font-family: $core-font;
 
-        
+        display: grid;
+        grid-template-rows: auto auto;
     }
 
     .WelcomeInfoPage {
-        float: left;
-        width: 50%;
-        height: 100%;
+        display: grid;
+        grid-row: 1;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+
+        align-items: flex-start;
+
 
         padding: 15px;
         text-align: center;
@@ -36,28 +38,120 @@
     .WelcomeInfoTitle {
         background: $content-color;
         font-size: 34px;
+
+        margin-top: 25%;
+        margin-bottom: 15%;
     }
 
     .GetStartedButton {
         background: $button-color;
         color: black;
         border-radius: 7px;
-        border-width: 20px;
+        //margin-left: 15%;
 
+        //grid-column-start: 0 0;
+
+        //margin-top: 15%;
+        margin: 15% 40%;
         padding: 15px 15px 15px 15px;
 
-        position: absolute;
         cursor: pointer;
+    
     }
 
     .GetStartedButton:hover {
-        border-width: 20px;
-        border-color: $button-hover-color;
+        background: $button-hover-color;
     }
 
     .Slideshow {
-        float: right;
         width: 50%;
         height: 100%;
+
+        background: #C4C4C4;
+    }
+
+    .AboutIntBuddyPage {
+        background: white;
+        color: black;
+        grid-row: auto;
+
+        text-align: center;
+    }
+
+    .AboutIntBuddyTitle {
+        font-size: 34px;
+
+        margin-top: 20px;
+        margin-bottom: 3%;
+    }
+
+    .AboutIntBuddyDesc {
+        font-size: 24px;
+
+        margin-top: 10px;
+        margin-bottom: 3%;
+
+    }
+
+    .AboutIntBuddyBody {
+        margin: 0 20% 3% 20%;
+
+        text-align: justify;
+    }
+
+    .AboutIntBuddyBody ul li {
+        align-items: center;
+    }
+
+    .AboutUsPage {
+        background: white;
+        color: black;
+
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-items: center;
+
+    }
+
+    .AboutUsTitle {
+        font-size: 34px;
+
+        margin-top: 40px;
+        margin-bottom: 3%; 
+        text-align: center;
+
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+
+    .AboutUsBlank {
+        grid-row: 2;
+    }
+
+    .AboutUsCircles {
+        border-color: black;
+        border-style: solid;
+        background: #c4c4c4;
+        border-radius: 50%;
+
+        height: 200px;
+        width: 200px;
+
+        margin-bottom: 3%;
+        align-self: center;
+        grid-row: 2;
+    }
+
+    .OurFaces {
+        width: 100%;
+        height: 100%;
+    }
+
+    .AboutUsDescription {
+        grid-row: 3;
+
+        margin-bottom: 5%;
     }
 }

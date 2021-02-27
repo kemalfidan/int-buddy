@@ -8,8 +8,8 @@
     height: 60px;
     width: 100%;
 
-    margin: 0 0 0 0px;
-    padding: 0 50px 0 70px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 
     font-family: $logo-font;
     font-size: 24px;
@@ -18,7 +18,7 @@
 
     background: $header-color;
 
-    cursor: pointer;
+    //position: fixed;
 }
 
 .LogoBack {
@@ -31,8 +31,6 @@
 
     margin: 5px 5px 5px 5px;
 
-    position: absolute;
-
     cursor: pointer;
 }
 
@@ -43,4 +41,8 @@
 
     width: 80%;
     height: 80%;
+}
+
+.AppTitle {
+    cursor: pointer;
 }

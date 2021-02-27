@@ -1,0 +1,22 @@
+@import "../theme/theme";
+
+.Footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 60px;
+    width: 100%;
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 20px;
+
+    font-family: $logo-font;
+    font-size: 24px;
+    font-weight: bold;
+    color: $on-secondary;
+
+    background: $header-color;
+
+    //position: fixed;
+}

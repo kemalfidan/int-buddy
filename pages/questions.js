@@ -4,8 +4,9 @@ import MCQuestion from "components/mcQuestion";
 import Layout from "components/Layout"
 import Header from 'components/Header'
 import Head from 'next/head'
+import Footer from 'components/Footer';
 
-
+var appTitle = "intBuddy";
 const max_questions = 2;
 /* question for */
 class questions extends Component {
@@ -44,7 +45,7 @@ class questions extends Component {
           { this.state.questionIndex != max_questions - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
         </div>
 
-
+        <Footer appTitle={appTitle} />
         <style global jsx>{`
           .navBn {
             margin-top: 30px;
