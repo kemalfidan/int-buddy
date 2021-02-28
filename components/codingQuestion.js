@@ -43,19 +43,14 @@ class CodeingQuestion extends Component {
             else: min_of_right = min(A[i], B[j])
 
             return (max_of_left + min_of_right) / 2.0"`,
-    "hints": ["Summarize your professional standing", "Elaborate on your experiences and achievements", "Conclude with a lead-in to the next part of the conversation"],
-    "example": "My name is Kareem Ali. I’m the product development manager at Smart Solutions. \
-               I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. \
-               I see myself as a relentless problem-solver, and I’m always looking for a new challenge. \
-               I’ve recently gotten interested in recreational boating and noticed that the sales professionals at Dockside Boats don’t seem to have a streamlined system for tracking their sales. \
-               I’d love to discuss your needs in this area and find out if you’re interested in participating in beta testing for a new sales app I’m developing."
+    "answer_explanation" : "",
   };
 
   state = {
     showHints: false,
     showDescription: true,
     showAnswer: false,
-    yourAnswer: "class Voila {\npublic:\n    // Voila\n    static const string VOILA = \"Voila\"\n}"
+    yourAnswer: "def median(A, B): \n    pass"
   };
 
   hintsHandler = () => {
