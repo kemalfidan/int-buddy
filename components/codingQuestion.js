@@ -77,7 +77,7 @@ class CodeingQuestion extends Component {
       <>  
         <div className="container mycontainer">
           <div className="row">
-            <div className="col" style={{borderRight: "1px solid grey", overflow: "auto", height:"100vh"}}>
+            <div className="col" style={{borderRight: "1px solid grey", overflow: "scroll", height:"65vh"}}>
               <nav>
                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
                   <a onClick={this.showDescription} className={this.state.showDescription ? "nav-item nav-link active" : "nav-item nav-link"} href="#">Description</a>
@@ -111,16 +111,12 @@ class CodeingQuestion extends Component {
                   { this.state.showAnswer && <> 
 
                     <div style={{border: "1px solid lightgrey"}}>
-                      <CodePrettier language="java" disabled={true}>{this.questions.answer}</CodePrettier>
+                      <CodePrettier disabled={true}>{this.questions.answer}</CodePrettier>
                     </div>
                   </> }
 
                  
                 </div>
-                
-                
-                <div style={{marginBottom: "200px"}}></div>
-
               </div>
                 
             </div>
@@ -128,7 +124,7 @@ class CodeingQuestion extends Component {
 
               Your answer: <br/> <br/>
               <div style={{border: "1px solid lightgrey"}}>
-                <CodePrettier language="java" state={this.state}></CodePrettier>
+                <CodePrettier state={this.state}></CodePrettier>
               </div>
             </div>
 
@@ -138,19 +134,10 @@ class CodeingQuestion extends Component {
 
         <style jsx>{`
 
-         
           .mycontainer {
-            margin: 20px;
+            margin: 10px 20px 0px 20px;
             padding: 0px 10px 0px 10px;
-          }
 
-          .textInput {
-            background-color: lightgrey;
-            padding: 10px;
-            margin-right: 20px;
-          }
-          .textLabel {
-            margin: 0px;
           }
 
           .exampleBlock {
