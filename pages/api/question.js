@@ -21,11 +21,20 @@ export default async function handler(req, res) {
         else if (req.method === "POST") {
             const form = new formidable.IncomingForm();
             form.parse(req, async (err, fields, files) => {
-                await addQuestion(fields);
-                res.status(200).json({
-                    status: 200,
-                    payload: {},
-                });
+                try{
+                    await addQuestion(fields);
+                    res.status(200).json({
+                        status: 200,
+                        payload: {},
+                    });
+                }
+                catch (e) {
+                    console.error(e);
+                    res.status(400).json({
+                        status: 400,
+                        message: e.message
+                    });
+                }
             });
         }
     }
