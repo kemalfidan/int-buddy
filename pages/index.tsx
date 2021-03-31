@@ -1,9 +1,9 @@
-//import { NextPage } from "next";
+import { NextPage } from "next";
 import Layout from "components/Layout";
-import Link from 'next/link';
-const Home = () => {
+
+const Home: NextPage = () => {
   return (
-    <Layout></Layout>
+    <Layout />
   );
 };
 

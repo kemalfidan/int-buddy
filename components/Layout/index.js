@@ -1,7 +1,6 @@
 import Head from "next/head";
-
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 import Link from "next/link"
 
 import styles from "./Layout.module.scss";
@@ -23,9 +22,13 @@ const Layout = props => {
                     <div className={styles.WelcomeInfoBox}>
                         <div className={styles.WelcomeInfoTitle}>Get started with intBuddy</div>
                         <div>Your end-to-end mock interview platform.</div>
-                        <div className={styles.GetStartedButton}><Link href="/questions">Try it now!</Link></div>
+                        <Link href="/questions">
+                            <button className={styles.GetStartedButton}>
+                                <a>Try it now!</a>
+                            </button>
+                        </Link>
                     </div>
-                    <div className={styles.SlideShow}>temp</div>
+                    {/* <div className={styles.SlideShow}>temp</div> */}
                 </div>
 
                 <div className={styles.AboutIntBuddyPage}>
@@ -55,16 +58,16 @@ const Layout = props => {
                     <div className={styles.AboutUsTitle}>Meet the Team</div>
                     <div className={styles.AboutUsBlank}></div>
                     <div className={styles.AboutUsCircles}>
-                        <img className={styles.OurFaces} src="kemal_fidan.png"></img>
+                        <img className={styles.OurFaces} src="kemal_fidan.jpeg"></img>
                     </div>
                     <div className={styles.AboutUsCircles}>
-                        <img className={styles.OurFaces} src="catherine_fei.png"></img>
+                        <img className={styles.OurFaces} src="catherine_fei.jpeg"></img>
                     </div>
                     <div className={styles.AboutUsCircles}>
                         <img className={styles.OurFaces} src="logan_courtney.png"></img>
                     </div>
                     <div className={styles.AboutUsCircles}>
-                        <img className={styles.OurFaces} src="chaohui_zheng.png"></img>
+                        <img className={styles.OurFaces} src="chaohui_zheng.jpeg"></img>
                     </div>
                     <div className={styles.AboutUsBlank}></div>
                     <div className={styles.AboutUsDescription}></div>
