@@ -5,6 +5,7 @@ import Layout from "components/Layout"
 import Header from 'components/Header'
 import Head from 'next/head'
 import Footer from 'components/Footer';
+import Timer from 'components/Timer';
 
 var appTitle = "intBuddy";
 const max_questions = 2;
@@ -36,6 +37,7 @@ class questions extends Component {
         </Head>
 
         <Header appTitle="intBuddy"/>
+        <Timer/>
 
         { this.state.questionIndex == 0 && <IntroQuestion></IntroQuestion> }
         { this.state.questionIndex == 1 && <MCQuestion></MCQuestion> }
