@@ -16,7 +16,7 @@ export const getQuestions = async function () {
     
     if (!questions) {
         throw new Error("No questions found!");
-    } 
+    }
     
     return questions;
 }

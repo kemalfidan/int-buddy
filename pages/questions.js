@@ -6,6 +6,7 @@ import Layout from "components/Layout"
 import Header from 'components/Header'
 import Head from 'next/head'
 import Footer from 'components/Footer';
+import Timer from 'components/Timer';
 
 var appTitle = "intBuddy";
 const max_questions = 3;
@@ -36,7 +37,12 @@ class questions extends Component {
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"/>
         </Head>
 
+
         <Header appTitle={appTitle}/>
+
+
+        <Timer/>
+
 
         { this.state.questionIndex == 0 && <IntroQuestion></IntroQuestion> }
         { this.state.questionIndex == 1 && <MCQuestion></MCQuestion> }
