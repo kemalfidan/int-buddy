@@ -23,16 +23,13 @@
     }
 
     .WelcomeInfoPage {
-        display: grid;
-        grid-row: 1;
-        grid-template-columns: 50% 50%;
-        width: 100%;
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
 
-        align-items: flex-start;
-
-
-        padding: 15px;
+        //padding: 15px;
         text-align: center;
+        align-items: center;
     }
 
     .WelcomeInfoTitle {
@@ -40,7 +37,61 @@
         font-size: 34px;
 
         margin-top: 10%;
-        // margin-bottom: 15%;
+        margin-bottom: 20px;
+    }
+
+    .AnimationBox {
+        overflow: hidden;
+    }
+
+    .Mascot {
+        width: 25%;
+        z-index: 0;
+        transform: translate(-100%, 50%);
+
+        position: relative;
+    }
+
+    .WelcomeInfoBox {
+        flex: 0 1 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .WelcomeInfoSlideShow {
+        flex: 0 1 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SlideShowBackground {
+        flex: 0 1 75%;
+        margin: 10%;
+        width: 60%;
+        height: 0;
+
+        padding-bottom: 50%;
+        background-color: lightgray;
+    }
+
+    .ButtonBox {
+        flex: 0 1 110%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        //margin-top: 25px;
+    }
+
+    .Buttoncont {
+        flex: 0 1 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+
+        margin-top: 25px;
     }
 
     .GetStartedButton {
@@ -48,17 +99,34 @@
         color: black;
         border-radius: 7px;
         border-width: 1px;
-        width: 200px;
-        margin: 15% 40%;
-        padding: 15px 15px 15px 15px;
+        margin-top: 35px;
+        padding: 15px 25px 15px 25px;
         font-size: 20px;
+        z-index: 1;
 
         cursor: pointer;
-    
     }
 
     .GetStartedButton:hover {
         background: $button-hover-color;
+    }
+
+    .GetStartedButton:hover ~ .Mascot {
+        animation: peek 2s linear 0s infinite forwards;
+    }
+
+    @keyframes peek {
+        0% {
+            transform: translate(-100%, 50%);
+        }
+
+        70% {
+            transform: translate(-100%, 0%);
+        }
+
+        100% {
+            //transform: translate(-100%, 0%);
+        }
     }
 
     .Slideshow {
@@ -69,6 +137,7 @@
     }
 
     .AboutIntBuddyPage {
+        height: 75vh;
         background: white;
         color: black;
         grid-row: auto;
@@ -79,7 +148,8 @@
     .AboutIntBuddyTitle {
         font-size: 34px;
 
-        margin-top: 20px;
+        
+        margin-top: 40px;
         margin-bottom: 3%;
     }
 
@@ -94,6 +164,7 @@
     .AboutIntBuddyBody {
         margin: 0 20% 3% 20%;
 
+        font-size: 22px;
         text-align: justify;
     }
 
@@ -102,6 +173,7 @@
     }
 
     .AboutUsPage {
+        height: 75vh;
         background: white;
         color: black;
 
@@ -113,10 +185,10 @@
     }
 
     .AboutUsTitle {
-        font-size: 34px;
+        font-size: 50px;
 
-        margin-top: 40px;
-        margin-bottom: 3%; 
+        align-items: center;
+        margin-top: 40px; 
         text-align: center;
 
         grid-row: 1;
@@ -137,7 +209,6 @@
         height: 200px;
         width: 200px;
 
-        margin-bottom: 3%;
         align-self: center;
         grid-row: 2;
     }
@@ -148,9 +219,32 @@
         border-radius: 100px;
     }
 
+    .AboutUsCircles:hover {
+        cursor: pointer;
+        background: white;
+        animation: spin 1s linear 0s 3 alternate;
+    }
+
+    .OurFaces:hover {
+        background: white;
+        //animation: spin 2s linear 0s infinite alternate;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translate(-10px, 0px);
+        }
+
+        50% {
+            transform: translate(10px, 0px);
+        }
+
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+
     .AboutUsDescription {
         grid-row: 3;
-
-        margin-bottom: 5%;
     }
 }

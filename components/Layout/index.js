@@ -22,13 +22,22 @@ const Layout = props => {
                     <div className={styles.WelcomeInfoBox}>
                         <div className={styles.WelcomeInfoTitle}>Get started with intBuddy</div>
                         <div>Your end-to-end mock interview platform.</div>
-                        <Link href="/questions">
-                            <button className={styles.GetStartedButton}>
-                                <a>Try it now!</a>
-                            </button>
-                        </Link>
+                        <div className={styles.ButtonBox}>
+                            <div className={styles.Buttoncont}>    
+                                <Link href="/questions">
+                                    <button className={styles.GetStartedButton}>
+                                        <a>Try it now!</a>
+                                    </button>
+                                </Link>
+                                <img className={styles.Mascot} src="intBuddy.svg"></img>
+                            </div>
+                        </div>
                     </div>
-                    {/* <div className={styles.SlideShow}>temp</div> */}
+                    <div className={styles.WelcomeInfoSlideShow}>
+                        <div className={styles.SlideShowBackground}>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles.AboutIntBuddyPage}>
