@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import styles from "./Timer.module.scss";
 
+
 class Timer extends Component {
     state = {
       timerOn: false,
       timerStart: 0,
       timerTime: 0
     };
-  
+
     startTimer = () => {
       this.setState({
         timerOn: true,
@@ -44,7 +45,7 @@ class Timer extends Component {
       let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
       return (
         <div className={styles.Timer}>
-          {hours} : {minutes} : {seconds}
+          {hours}:{minutes}:{seconds}
         </div>
       );
     }
