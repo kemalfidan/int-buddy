@@ -1,5 +1,6 @@
 import mongoDB from "../index";
 import QuestionSchema from "../models/Question";
+import { QuestionType } from "utils/types";
 
 export const addQuestion = async function (question) {
     await mongoDB();
@@ -20,3 +21,26 @@ export const getQuestions = async function () {
     
     return questions;
 }
+
+export const getExamSession = async function () {
+    await mongoDB();
+    
+    var examSession = [];
+    var promises = [];
+    for (let questionType in QuestionType) {
+        // get more mult choice questions
+        if (questionType === "MultipleChoice") {
+            promises.push(QuestionSchema.find({type: questionType}).limit(2));
+        }
+        else {
+           promises.push(QuestionSchema.find({type: questionType}).limit(1));
+        }
+    }
+
+    const questionsArray = await Promise.all(promises);
+    for (var questions of questionsArray) {
+        examSession = examSession.concat(questions);
+    }
+    return examSession;
+}
+

@@ -7,17 +7,17 @@ export const config = {
     },
 };
 
-// GET    /api/question - Create exam session and return questions
-// POST   /api/question - Create an exam question
+// GET    /api/question - Get a list of all the questions in the db.
+// POST   /api/question - Create an exam question.
 export default async function handler(req, res) {
     try {
         if (req.method === "GET") {
-            const questions = await getQuestions();
+            const questions = await x();
             res.status(200).json({
                 status: 200,
                 payload: questions,
             });
-        } 
+        }
         else if (req.method === "POST") {
             const form = new formidable.IncomingForm();
             form.parse(req, async (err, fields, files) => {

@@ -6,9 +6,11 @@ import Header from 'components/Header'
 import Head from 'next/head'
 import Footer from 'components/Footer';
 import Timer from 'components/Timer';
+import { getExamSession } from "server/actions/Question";
 
 var appTitle = "intBuddy";
 const max_questions = 2;
+
 /* question for */
 class questions extends Component {
   
@@ -39,8 +41,8 @@ class questions extends Component {
         <Header appTitle="intBuddy"/>
         <Timer/>
 
-        { this.state.questionIndex == 0 && <IntroQuestion></IntroQuestion> }
-        { this.state.questionIndex == 1 && <MCQuestion></MCQuestion> }
+        { this.props.questions[this.state.questionIndex].type == "Introductory" && <IntroQuestion></IntroQuestion> }
+        { this.props.questions[this.state.questionIndex].type == "MultipleChoice" && <MCQuestion></MCQuestion> }
 
         <div className="navBn">
           { this.state.questionIndex != 0 && <button onClick={this.previousHandler} type="button" className="btn btn-primary previous">Previous</button> }
@@ -70,5 +72,22 @@ class questions extends Component {
     );
   }
 }
+
+export async function getStaticProps(context) {
+  try {
+      const questions = await getExamSession();
+
+      return {
+          props: {
+              questions: JSON.parse(JSON.stringify(questions)),
+          },
+      };
+  } catch (error) {
+      return {
+          props: {},
+      };
+  }
+}
+
 
 export default questions;
