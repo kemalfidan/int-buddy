@@ -9,11 +9,7 @@ import Timer from 'components/Timer';
 import { getExamSession } from "server/actions/Question";
 
 var appTitle = "intBuddy";
-const max_questions = 2;
-
-/* question for */
 class questions extends Component {
-  
   state = {
     questionIndex : 0
   };
@@ -39,14 +35,14 @@ class questions extends Component {
         </Head>
 
         <Header appTitle="intBuddy"/>
-        <Timer/>
+        <Timer number={this.state.questionIndex+1} total={this.props.questions.length} />
 
         { this.props.questions[this.state.questionIndex].type == "Introductory" && <IntroQuestion></IntroQuestion> }
         { this.props.questions[this.state.questionIndex].type == "MultipleChoice" && <MCQuestion></MCQuestion> }
 
         <div className="navBn">
           { this.state.questionIndex != 0 && <button onClick={this.previousHandler} type="button" className="btn btn-primary previous">Previous</button> }
-          { this.state.questionIndex != max_questions - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
+          { this.state.questionIndex != this.props.questions.length - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
         </div>
 
         <Footer appTitle={appTitle} />
@@ -76,6 +72,7 @@ class questions extends Component {
 export async function getStaticProps(context) {
   try {
       const questions = await getExamSession();
+      console.log(questions);
 
       return {
           props: {

@@ -44,9 +44,16 @@ class Timer extends Component {
       let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
       let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
       return (
-        <div className={styles.Timer}>
-          {hours}:{minutes}:{seconds}
-        </div>
+        <>
+          <div className={styles.header}>
+            <div className={styles.questionNumber}>
+              Question {this.props.number}/{this.props.total}
+            </div>
+            <div className={styles.timer}>
+              {hours}:{minutes}:{seconds}
+            </div>
+          </div>
+        </>
       );
     }
   }

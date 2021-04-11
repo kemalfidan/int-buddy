@@ -1,12 +1,19 @@
 @import "theme/theme";
 
-.Timer {
+.header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
     width: 100%;
-    padding-right: 40px;
     font-size: 34px;
     background-color: lightgray;
+}
+
+.timer {
+    padding-right: 40px;
+}
+
+.questionNumber {
+    padding-left: 40px;
 }
