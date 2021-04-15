@@ -6,16 +6,16 @@ import Head from 'next/head'
 
 class IntroQuestion extends Component {
 
-  /* to do the intro_questions should be pulled from its parent */
-  intro_questions = {
-    "question": "Tell me a little about yourself?",
-    "hints": ["Summarize your professional standing", "Elaborate on your experiences and achievements", "Conclude with a lead-in to the next part of the conversation"],
-    "example": "My name is Kareem Ali. I’m the product development manager at Smart Solutions. \
-               I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. \
-               I see myself as a relentless problem-solver, and I’m always looking for a new challenge. \
-               I’ve recently gotten interested in recreational boating and noticed that the sales professionals at Dockside Boats don’t seem to have a streamlined system for tracking their sales. \
-               I’d love to discuss your needs in this area and find out if you’re interested in participating in beta testing for a new sales app I’m developing."
-  };
+  /* to do the intro_question should be pulled from its parent */
+  // intro_question = {
+  //   "question": "Tell me a little about yourself?",
+  //   "hints": ["Summarize your professional standing", "Elaborate on your experiences and achievements", "Conclude with a lead-in to the next part of the conversation"],
+  //   "example": "My name is Kareem Ali. I’m the product development manager at Smart Solutions. \
+  //              I’ve created over a dozen apps designed to streamline sales and marketing activities for busy professionals. \
+  //              I see myself as a relentless problem-solver, and I’m always looking for a new challenge. \
+  //              I’ve recently gotten interested in recreational boating and noticed that the sales professionals at Dockside Boats don’t seem to have a streamlined system for tracking their sales. \
+  //              I’d love to discuss your needs in this area and find out if you’re interested in participating in beta testing for a new sales app I’m developing."
+  // };
 
   state = {
     showHints: false
@@ -33,7 +33,7 @@ class IntroQuestion extends Component {
           <div className="row">
             <div className="col" style={{borderRight: "1px solid grey"}}>
 
-              {this.intro_questions.question} <br/> <br/>
+              {this.props.question.question} <br/> <br/>
               <button type="button" className="btn btn-outline-primary" onClick={this.hintsHandler}>
                 {this.state.showHints && 'Hide hints'}
                 {!this.state.showHints && 'Show hints'}
@@ -44,13 +44,13 @@ class IntroQuestion extends Component {
                 <div>
                   <br/>Hints:
                   <ul>
-                    {this.intro_questions.hints.map( (hint,index) => {return <li key={index}>{hint}</li>})}
+                    {this.props.question.hints.map( (hint,index) => {return <li key={index}>{hint}</li>})}
                   </ul>
                
                
                   Example:
                   <ul>
-                    <li>{this.intro_questions.example}</li>
+                    <li>{this.props.question.explanation}</li>
                   </ul>
      
                 </div>

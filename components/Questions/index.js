@@ -32,19 +32,38 @@ class Questions extends Component {
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"/>
         </Head>
 
-        <Header appTitle="intBuddy"/>
-        <Timer number={this.state.questionIndex+1} total={this.props.questions.length} />
+        <div className="pageWrapper">
+          <Header appTitle="intBuddy" className="header"/>
+          <div className="pageBody">
+            <Timer number={this.state.questionIndex+1} total={this.props.questions.length} />
 
-        { this.props.questions[this.state.questionIndex].type == "Introductory" && <IntroQuestion></IntroQuestion> }
-        { this.props.questions[this.state.questionIndex].type == "MultipleChoice" && <MCQuestion></MCQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "Introductory" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "MultipleChoice" && <MCQuestion question={this.props.questions[this.state.questionIndex]}></MCQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "Behavioral" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "ShortAnswer" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "SystemDesign" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
 
-        <div className="navBn">
-          { this.state.questionIndex != 0 && <button onClick={this.previousHandler} type="button" className="btn btn-primary previous">Previous</button> }
-          { this.state.questionIndex != this.props.questions.length - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
+            <div className="navBn">
+              { this.state.questionIndex != 0 && <button onClick={this.previousHandler} type="button" className="btn btn-primary previous">Previous</button> }
+              { this.state.questionIndex != this.props.questions.length - 1 && <button onClick={this.nextHandler} type="button" className="btn btn-primary next">Next</button> }
+            </div>
+          </div>
+          <Footer appTitle={appTitle} className="footer"/>
         </div>
-
-        <Footer appTitle={appTitle} />
         <style jsx>{`
+          .pageWrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          .header, .footer {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;        
+          }
+          .pageBody {
+            flex-grow: 1;
+          }        
           .navBn {
             margin-top: 100px;
             margin-bottom: 150px;

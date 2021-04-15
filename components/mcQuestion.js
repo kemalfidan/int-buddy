@@ -8,12 +8,12 @@ import Head from 'next/head'
 class MCQuestion extends Component {
 
   /* to do the ml_questions should be pulled from its parent */
-  mc_questions = {
-    "question": "The code below calculates the average of two numbers. Will the code run properly with all test cases?\nint calculate_average(int a, int b) {\n    return a + b / 2;\n}",
-    "answer": "C",
-    "explanation": "It should be should be (a + b) / 2",
-    "options": ["True", "False"] 
-  };
+  // mc_questions = {
+  //   "question": "The code below calculates the average of two numbers. Will the code run properly with all test cases?\nint calculate_average(int a, int b) {\n    return a + b / 2;\n}",
+  //   "answer": "C",
+  //   "explanation": "It should be should be (a + b) / 2",
+  //   "options": ["True", "False"] 
+  // };
 
   state = {
     showAnswer: false
@@ -31,18 +31,18 @@ class MCQuestion extends Component {
           <div className="row">
             <div className="col" style={{borderRight: "1px solid grey"}}>
 
-              <NewlineText text={this.mc_questions.question} />
+              <NewlineText text={this.props.question.question} />
               <button type="button" className="btn btn-outline-primary" onClick={this.hintsHandler}>
                 {this.state.showAnswer && 'Hide answer'}
                 {!this.state.showAnswer && 'Show answer'}
               </button>
 
-              { this.state.showAnswer && <div><br/> Answer: {this.mc_questions.answer} </div> }
-              { this.state.showAnswer && this.mc_questions.explanation != "" &&
+              { this.state.showAnswer && <div><br/> Answer: {this.props.question.answer} </div> }
+              { this.state.showAnswer && this.props.question.explanation != "" &&
                 <div>
 
                   <br/>Explanation: <br/>
-                  { this.mc_questions.explanation }
+                  { this.props.question.explanation }
                 </div>
               }
             </div>
@@ -50,7 +50,7 @@ class MCQuestion extends Component {
               
                 Select one of the options below: 
                 <div className="border border-dark myborder">
-                  { this.mc_questions.options.map( (option, index) => {
+                  { this.props.question.options.map( (option, index) => {
                     return <div key={option}><input type="radio" name="option"/>{option}</div>
                   })}
 
