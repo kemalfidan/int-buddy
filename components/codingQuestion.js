@@ -118,7 +118,6 @@ class CodeingQuestion extends Component {
     showHints: false,
     showDescription: true,
     showAnswer: false,
-    yourAnswer: "def median(A, B): \n    pass",
     questionIndex: -1,
   };
 
@@ -142,7 +141,6 @@ class CodeingQuestion extends Component {
   };
 
   showDescription = () => {
-    console.log(this.state);
     this.setState({ showAnswer: false, showDescription: true });
   };
 
