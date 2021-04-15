@@ -34,9 +34,7 @@ const Layout = props => {
                         </div>
                     </div>
                     <div className={styles.WelcomeInfoSlideShow}>
-                        <div className={styles.SlideShowBackground}>
-
-                        </div>
+                        <img style={{ width: "600px", marginRight: "200px" }} src="home_page.png"></img>
                     </div>
                 </div>
 
