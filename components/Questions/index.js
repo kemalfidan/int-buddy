@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IntroQuestion from "components/introQuestion";
 import MCQuestion from "components/mcQuestion";
+import CodingQuestion from "components/codingQuestion"
 import Header from 'components/Header'
 import Head from 'next/head'
 import Footer from 'components/Footer';
@@ -39,6 +40,7 @@ class Questions extends Component {
 
             { this.props.questions[this.state.questionIndex].type == "Introductory" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
             { this.props.questions[this.state.questionIndex].type == "MultipleChoice" && <MCQuestion question={this.props.questions[this.state.questionIndex]}></MCQuestion> }
+            { this.props.questions[this.state.questionIndex].type == "Coding" && <CodingQuestion question={this.props.questions[this.state.questionIndex]}></CodingQuestion>}
             { this.props.questions[this.state.questionIndex].type == "Behavioral" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
             { this.props.questions[this.state.questionIndex].type == "ShortAnswer" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }
             { this.props.questions[this.state.questionIndex].type == "SystemDesign" && <IntroQuestion question={this.props.questions[this.state.questionIndex]}></IntroQuestion> }

@@ -26,6 +26,10 @@ class IntroQuestion extends Component {
     this.setState({showHints : h});
   };
 
+  textHandler = (e) => {
+    this.props.question.your_answer = e.target.value;
+  }
+
   render() {
     return (
       <>  
@@ -60,7 +64,10 @@ class IntroQuestion extends Component {
             <div className="col">
               
                 <label className="textLabel">Your answer: 
-                  <textarea name="answer" rows="5" cols = "50" className="textInput"></textarea>
+                  <textarea name="answer" rows="5" cols = "50" className="textInput" onChange={this.textHandler} 
+                  defaultValue = {this.props.question.your_answer}>
+                    
+                  </textarea>
                 </label>
              
             </div>

@@ -3,7 +3,7 @@ import { getExamSession } from "server/actions/Question";
 import Questions from "components/Questions";
 
 const QuestionsPage = ({questions}) => {
-
+  
   return (
     <Questions questions={questions}/>
   );
@@ -13,10 +13,11 @@ const QuestionsPage = ({questions}) => {
 export async function getServerSideProps() {
   try {
       const questions = await getExamSession();
-
+      let q = JSON.parse(JSON.stringify(questions));
+      q.push({type: "Coding", yourAnswer : ""});
       return {
           props: {
-              questions: JSON.parse(JSON.stringify(questions)),
+              questions: q,
           },
       };
   } catch (error) {
